@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Lıbrary</string>
+    <string name="pw1">password</string>
+    <string name="pw2">confirm password</string>
+    <string name="email">email</string>
+    <string name="register">REGISTER</string>
+    <string name="login">LOGIN</string>
+
+    <string name="email2">email</string>
+    <string name="pword2">password</string>
+    <string name="login2">LOGIN</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
