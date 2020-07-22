@@ -3,9 +3,7 @@ package com.example.lbrary;
 
 import android.database.Cursor;
 import android.os.Bundle;
-
 import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,8 +27,27 @@ public class Frag2 extends Fragment {
     ListView lv;
 
     public Frag2() {
-        // Required empty public constructor
+
     }
+
+    /* update fragment after adding new data */
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+
+        super.setUserVisibleHint(isVisibleToUser);
+
+        // Refresh tab data:
+
+        if (getFragmentManager() != null) {
+
+            getFragmentManager()
+                    .beginTransaction()
+                    .detach(this)
+                    .attach(this)
+                    .commit();
+        }
+    }
+
 
 
 

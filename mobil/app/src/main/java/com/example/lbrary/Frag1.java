@@ -2,9 +2,7 @@ package com.example.lbrary;
 
 
 import android.os.Bundle;
-
 import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,13 +16,13 @@ import android.widget.Toast;
 public class Frag1 extends Fragment {
 
     public Frag1() {
-        // Required empty public constructor
-    }
+
+        }
+
 
     EditText kitap_adı,yazar_adı;
     Button ekle;
     KitapEkleAdapter kitap_ekle;
-    Frag2 fg2;
 
 
     @Override
@@ -33,7 +31,7 @@ public class Frag1 extends Fragment {
 
         View view=inflater.inflate(R.layout.fragment_frag1, container, false);
 
-            fg2=new Frag2();
+
 
         kitap_adı=view.findViewById(R.id.kitap_adı);
         yazar_adı=view.findViewById(R.id.yazar_adı);
@@ -68,7 +66,7 @@ public class Frag1 extends Fragment {
                         {
                             Toast.makeText(getActivity(),"successfully added",Toast.LENGTH_SHORT).show();
 
-                            fg2.adapter.notifyDataSetChanged();
+
                         }
 
                     }
@@ -83,5 +81,6 @@ public class Frag1 extends Fragment {
         return view;
 
     }
+    
 
 }

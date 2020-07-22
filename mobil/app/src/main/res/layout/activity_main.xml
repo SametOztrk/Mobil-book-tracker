@@ -6,12 +6,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
+    android:background="@color/colorBlack"
     >
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
-
         android:layout_height="wrap_content"
         android:src="@drawable/log"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -27,6 +27,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/email"
+        android:textColorHint="@color/colorWhite"
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -40,6 +41,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/pw1"
+        android:textColorHint="@color/colorWhite"
         android:inputType="none|textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -55,6 +57,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/pw2"
+        android:textColorHint="@color/colorWhite"
         android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -79,6 +82,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Zaten hesabın var mı?"
+        android:textColor="@color/colorWhite"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
