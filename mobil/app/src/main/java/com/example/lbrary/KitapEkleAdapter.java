@@ -47,6 +47,15 @@ public class KitapEkleAdapter extends SQLiteOpenHelper {
         }
     }
 
+    /*public boolean deleteBook(String book_name,String author_name)
+    {
+        SQLiteDatabase db=this.getReadableDatabase();
+        db.delete("books","where book_name=? and author_name=?",new String[]{book_name,author_name});
+
+        return true;
+    }
+     */
+
 
     public boolean checkBook(String book_name)
     {
@@ -67,17 +76,33 @@ public class KitapEkleAdapter extends SQLiteOpenHelper {
             return true;
         }
     }
+    
+    public boolean deleteBook(String book_name, String author)
+    {
+        SQLiteDatabase db=this.getWritableDatabase();
+        long ins= db.delete("books","book_name=? and author=?",new String[]{book_name,author});
 
-            public Cursor viewData()
-            {
+        if(ins==-1)
+        {
+            db.close();
+            return false;
+        }
+        else {
+            db.close();
+            return true;
+        }
+    }
 
-             SQLiteDatabase db=this.getReadableDatabase();
-                String query="Select * from books";
+    public Cursor viewData()
+    {
 
-                Cursor cursor=db.rawQuery(query,null);
+        SQLiteDatabase db=this.getReadableDatabase();
+        String query="Select * from books";
 
-                return cursor;
-            }
+        Cursor cursor=db.rawQuery(query,null);
+
+        return cursor;
+    }
 
 }
 

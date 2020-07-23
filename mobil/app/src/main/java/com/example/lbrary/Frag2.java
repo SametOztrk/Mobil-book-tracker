@@ -1,6 +1,4 @@
 package com.example.lbrary;
-
-
 import android.database.Cursor;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
@@ -10,25 +8,16 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
-
 import java.util.ArrayList;
 
-
-/**
- * A simple {@link Fragment} subclass.
- */
 public class Frag2 extends Fragment {
-
 
     ArrayList<String> list;
     ArrayAdapter<String> adapter;
     KitapEkleAdapter db;
-
     ListView lv;
 
-    public Frag2() {
-
-    }
+    public Frag2() {}
 
     /* update fragment after adding new data */
     @Override
@@ -48,9 +37,6 @@ public class Frag2 extends Fragment {
         }
     }
 
-
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -59,11 +45,10 @@ public class Frag2 extends Fragment {
         db= new KitapEkleAdapter(getActivity());
 
         lv=(ListView) view.findViewById(R.id.listview);
+        list = new ArrayList<>();
 
-         list = new ArrayList<>();
 
         Cursor cursor=db.viewData();
-
         if(cursor.getCount()==0)
         {
             Toast.makeText(getActivity(),"no data",Toast.LENGTH_SHORT).show();
@@ -72,23 +57,16 @@ public class Frag2 extends Fragment {
         {
             while (cursor.moveToNext())
             {
-                list.add(cursor.getString(1));
+                list.add(cursor.getString(0));
 
                 adapter=new ArrayAdapter<>(getActivity(),android.R.layout.simple_list_item_1,list);
                 lv.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
 
             }
-
-
-
         }
-
 
         // Inflate the layout for this fragment
         return view;
     }
-
-
-
 }
